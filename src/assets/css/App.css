@@ -1,0 +1,64 @@
+@import '~mdb-ui-kit/css/mdb.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
+*{
+    font-family: 'Rubik', sans-serif;
+
+    text-transform: capitalize;
+
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.doorTop {
+    width: 400px;
+    height: 60px;
+    border-radius: 10px;
+}
+.vh-100{
+    height: 100vh;
+}
+.doorTop a{
+    width: 50%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    color: black;
+
+}
+.doorTop a:first-child{
+    border-right: 2px solid black;
+
+}
+.doorTop a:hover{
+    background-color: #4644e4;
+    color: white;
+    font-size: 21px;
+
+}
+.active{
+    background: #4644e4;
+    color: white !important;
+    font-size: 21px;
+}
+.door {
+    height: 500px;
+    box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+@media only screen and (max-width:700px){
+    .door {
+    min-width: 95%;
+    width: 95%;
+    }
+    .doorTop {
+        width: 100%;
+    }
+}
