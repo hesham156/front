@@ -15,31 +15,27 @@ const Login = () => {
     const [uEmail,setUEmail] = useState()
     const [uPass,setUPass] = useState()
     const [user,setuser] = useState({})
-    const addToStorage=()=>{
-      console.log(user)
-
-      localStorage.setItem('user',JSON.stringify(user))
+    const addToStorage=(name,email,password,image)=>{
+      localStorage.setItem('user',JSON.stringify({'name':name,'email':email,'password':password,'image':image}))
       toast.success("Success")
-      // redirect()
+      redirect()
     }
 const loginfun = ()=>{
      if(uEmail && uPass){
        if(uEmail.search('@')>=0){
-        toast.success("Success")
-        redirect()
+       addToStorage(uEmail,uEmail,uPass,'https://ps.w.org/user-avatar-reloaded/assets/icon-256x256.png?rev=2540745')
        }else{toast.error("please inter a valid email")}
      }else{toast.error("please inter all data")}
 }
 const responseFacebook = (response) => {
-  console.log(response);
-  setuser({'name':response.name,'email':response.email,'password':response.userID,'image':response.picture.data.url})
-  addToStorage() 
+  // setuser({'name':response.name,'email':response.email,'password':response.userID,'image':response.picture.data.url})
+  addToStorage(response?.name,response?.email,response?.userID,response?.picture.data.url) 
 }
  
 const responseGoogle = (response) => {
-  console.log(response);
-  setuser({'name':response?.profileObj.name,'email':response?.profileObj.email,'password':response?.profileObj.googleId,'image':response?.profileObj.imageUrl})
-  addToStorage()
+  // setuser({'name':response?.profileObj.name,'email':response?.profileObj.email,'password':response?.profileObj.googleId,'image':response?.profileObj.imageUrl})
+  addToStorage(response?.profileObj.name,response?.profileObj.email,response?.profileObj.googleId,response?.profileObj.imageUrl) 
+
 
 }
 useEffect(() => {
@@ -70,13 +66,13 @@ useEffect(() => {
     </div>
      <div className='loginForm center flex-column'>
       <label htmlFor="email">Email</label>
-        <input type="email" />
+        <input onChange={(e)=>{setUEmail(e.target.value)}} type="email" />
         <label htmlFor="password">Password</label>
-        <input type="password"/> 
+        <input onChange={(e)=>{setUPass(e.target.value)}} type="password"/> 
      </div>
      <div className='loginBottom'>
       <input type='checkbox' />
-      <button className="loginBtn"> Login </button>
+      <button onClick={()=>{loginfun()}} className="loginBtn"> Login </button>
      </div>
   </div>
   )

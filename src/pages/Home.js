@@ -3,13 +3,15 @@ import { Link } from 'react-router-dom'
 
 function Home() {
   const [user,setuser] = useState()
+  const [logout,setlogout] = useState('')
+
   useEffect(()=>{
       setuser(JSON.parse(localStorage.getItem('user')))
-  },[user])
+  },[logout])
   return (
-    <div>
-{user?<div>
-      <div className='user'>
+    <div className='center w-100 flex-column h-25'>
+{user?<div className='center w-100 flex-row'>
+      <div className='user center flex-row-reverse'>
         <div className='username'>
           <h1>{user?.name}</h1>
         </div>
@@ -20,6 +22,7 @@ function Home() {
       </div>
       <button onClick={()=>{
         localStorage.clear()
+        setlogout('logout')
       }}>Logout</button>
       </div>:<Link to='/door/login'>Login</Link>
       }
