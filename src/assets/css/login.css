@@ -10,6 +10,7 @@
     }
     input:not([type="checkbox"]){
         height: 45px;
+        position: relative;
     border: 0;
     width: 100%;
     outline: none;
@@ -39,4 +40,17 @@
     .loginBottom {
         width: 90%;
     }
-    
+    .loginForm.center.flex-column {
+        position: relative;
+    }
+    .loginForm.center.flex-column label {
+        position: absolute;
+        left: 10px;
+      
+    }
+    .loginForm.center.flex-column label:first-child{
+        top: 20px;
+    }
+    .loginForm.center.flex-column label[for="password"]{
+        bottom: 20px;
+        }

@@ -1,9 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, Route, Routes } from 'react-router-dom'
 import Login from './Login'
 import Register from './Register'
 
 const Door = () => {
+  useEffect(() => {
+   document.querySelector('.active')?.click()
+  }, []);
  const[active,setActive]=useState('login')
   return (
     <div className='center w-100 vh-100'>
