@@ -54,3 +54,15 @@
     .loginForm.center.flex-column label[for="password"]{
         bottom: 20px;
         }
+    button.kep-login-facebook.metro {
+            background: none;
+            width: 10px;
+            height: 10px;
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+    svg {
+            fill: #4644e4 !important;
+            font-size: 34px;
+        }
