@@ -16,7 +16,6 @@ function Home() {
           <h1>{user?.name}</h1>
         </div>
         <div className='userimg'>
-          
           <img src={user?.image} alt='user' />
         </div>
       </div>
@@ -24,7 +23,9 @@ function Home() {
         localStorage.clear()
         setlogout('logout')
       }}>Logout</button>
-      </div>:<Link to='/door/login'>Login</Link>
+      </div>:<div className='buttons'>
+        <Link to='/door/login'>Login</Link>
+      <Link to='/door/register'>register</Link></div>
       }
     </div>
   )

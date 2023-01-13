@@ -28,12 +28,10 @@ const loginfun = ()=>{
      }else{toast.error("please inter all data")}
 }
 const responseFacebook = (response) => {
-  // setuser({'name':response.name,'email':response.email,'password':response.userID,'image':response.picture.data.url})
   addToStorage(response?.name,response?.email,response?.userID,response?.picture.data.url) 
 }
  
 const responseGoogle = (response) => {
-  // setuser({'name':response?.profileObj.name,'email':response?.profileObj.email,'password':response?.profileObj.googleId,'image':response?.profileObj.imageUrl})
   addToStorage(response?.profileObj.name,response?.profileObj.email,response?.profileObj.googleId,response?.profileObj.imageUrl) 
 
 
