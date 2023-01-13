@@ -48,6 +48,9 @@
         left: 10px;
       
     }
+    .loginForm.center.flex-column label[for="email"]{
+        top: 85px;
+    }
     .loginForm.center.flex-column label:first-child{
         top: 20px;
     }

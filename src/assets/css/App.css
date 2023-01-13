@@ -48,7 +48,8 @@
     font-size: 21px;
 }
 .door {
-    height: 500px;
+    min-height: 500px;
+    height: auto;
     box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
     border-radius: 12px;
     overflow: hidden;

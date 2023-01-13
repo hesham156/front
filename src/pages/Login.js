@@ -1,6 +1,6 @@
 import '../assets/css/login.css'
 
-import { useEffect, useState } from 'react';
+import {  useState } from 'react';
 import { toast } from 'react-toastify';
 
 
