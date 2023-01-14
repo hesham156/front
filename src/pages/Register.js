@@ -1,7 +1,12 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 
-const Register = () => {
+const Register = ({anima}) => {
+  useEffect(()=>{
+    anima()
+
+  },[])
+
 
 
   return (
@@ -11,14 +16,24 @@ const Register = () => {
     
     </div>
      <div className='loginForm center flex-column'>
+<form autoComplete="new-password">
+      <div className='input'>
      <label htmlFor="name">Your Name</label>
-        <input  type="text"/> 
+        <input autoComplete="new-password" type="text"/> 
+        </div>
+        <div className='input'>
       <label htmlFor="email">Email</label>
-        <input  type="email" />
-        <label htmlFor="password">Password</label>
-        <input  type="password"/> 
+        <input autoComplete="new-password"  type="email" />
+        </div>
+        <div className='input'>
+          <label htmlFor="password">Password</label>
+          <input autoComplete="new-password"  type="password"/> 
+        </div>
+      <div className='input'>
         <label htmlFor="Repeat password">Repeat Password</label>
-        <input  type="password"/> 
+        <input autoComplete="new-password"  type="password"/>
+         </div>
+         </form>
      </div>
      <div className='loginBottom'>
       <input type='checkbox' />

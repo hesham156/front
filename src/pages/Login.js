@@ -1,14 +1,19 @@
 import '../assets/css/login.css'
 
-import {  useState } from 'react';
+import {  useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 
 
-const Login = ({redirect,addToStorage}) => {
+const Login = ({redirect,addToStorage,anima}) => {
     const [uEmail,setUEmail] = useState()
     const [uPass,setUPass] = useState()
-
-
+    useEffect(()=>{
+      anima()
+  
+    },[])
+  
+  
+  
 const loginfun = ()=>{
      if(uEmail && uPass){
        if(uEmail.search('@')>=0){
@@ -26,10 +31,14 @@ const loginfun = ()=>{
     
     </div>
      <div className='loginForm center flex-column'>
+     <div className='input'>
       <label htmlFor="email">Email</label>
         <input onChange={(e)=>{setUEmail(e.target.value)}} type="email" />
+        </div>
+        <div className='input'>
         <label htmlFor="password">Password</label>
         <input onChange={(e)=>{setUPass(e.target.value)}} type="password"/> 
+        </div>
      </div>
      <div className='loginBottom'>
       <input type='checkbox' />

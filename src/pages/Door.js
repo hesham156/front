@@ -18,6 +18,19 @@ const addToStorage=(name,email,password,image)=>{
     toast.success("Success")
     redirect()
   }
+  const anima=()=>{
+    const elms =Array.from(document.querySelectorAll('.input'));
+    console.log(elms)
+
+    elms.forEach(elm=>{
+      elm.onclick=()=>{
+        for(let i =0;i<=elms.length;i++){
+            elms[i]?.classList.remove('select')
+        }
+        elm.classList.add('select')
+      }
+    })
+  }
   const responseFacebook = (response) => {
     addToStorage(response?.name,response?.email,response?.userID,response?.picture.data.url) 
   }
@@ -43,8 +56,8 @@ const addToStorage=(name,email,password,image)=>{
         </div>
         <div className='doorBootom'>
                     <Routes>
-                        <Route path='/login' element={<Login redirect={redirect} addToStorage={addToStorage}/>} />
-                        <Route path='/register' element={<Register redirect={redirect} addToStorage={addToStorage}/>} />
+                        <Route path='/login'  element={<Login redirect={redirect} addToStorage={addToStorage} anima={()=>{anima()}}/>} />
+                        <Route path='/register'  element={<Register redirect={redirect} addToStorage={addToStorage} anima={()=>{anima()}}/>} />
                     </Routes>
         </div>
         <div className='social-login'>
