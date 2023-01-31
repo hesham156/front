@@ -1,8 +1,18 @@
 import React from 'react'
 
-const Tasks = () => {
+const Tasks = ({tasks}) => {
   return (
-    <div className='colum tasks'>Tasks</div>
+    <div className='colum tasks'>
+        <div className='container'>
+            {tasks.map((task)=>{
+                return(<div className='task'>
+                        <p>{task.taskName}</p>
+                </div>)
+            })}
+        </div>
+
+
+    </div>
   )
 }
 

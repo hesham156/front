@@ -35,4 +35,14 @@ a{
 .header {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
+
+}
+.task{
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 10px;
+
 }
