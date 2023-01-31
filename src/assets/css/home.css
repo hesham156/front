@@ -25,3 +25,14 @@ a{
 .user:hover .username ul{
     height: 100px;
 }
+.colum{
+    width: 300px;
+    text-align: center;
+    background: #a9acaf;
+    padding: 10px;
+    margin: 10px;
+}
+.header {
+    display: flex;
+    justify-content: center;
+}
