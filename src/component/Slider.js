@@ -16,6 +16,7 @@ const Slider = ({data,type}) => {
           </div>
     </div>
   )
+  
 }
 
 export default Slider
