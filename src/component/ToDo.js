@@ -1,8 +1,13 @@
 import React from 'react'
+import Task from './user/Task'
 
-const ToDo = () => {
+const ToDo = ({refs,board}) => {
   return (
-    <div className='colum todo'>ToDo</div>
+    <div ref={refs} className='colum todo'>
+      {board.map((task)=>{
+             return <Task data={task} />
+      })}
+    </div>
   )
 }
 

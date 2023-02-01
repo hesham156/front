@@ -1,14 +1,23 @@
 import React from 'react'
-
+import { useDrag } from 'react-dnd'
+import Task from './user/Task'
 const Tasks = ({tasks}) => {
+  // const [{ opacity }, dragRef] = useDrag(
+  //   () => ({
+  //     type: ItemTypes.CARD,
+  //     item: { text },
+  //     collect: (monitor) => ({
+  //       opacity: monitor.isDragging() ? 0.5 : 1
+  //     })
+  //   }),
+  //   []
+  // )
   return (
-    <div className='colum tasks'>
+    <div draggable  className='colum tasks'>
         <div className='container'>
             <h4>TASKS</h4>
             {tasks.map((task)=>{
-                return(<div className='task'>
-                        <p>{task.taskName}</p>
-                </div>)
+                return  <Task data={task}/>
             })}
         </div>
 
