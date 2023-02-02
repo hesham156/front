@@ -1,12 +1,17 @@
 import React from 'react'
 import Task from './user/Task'
 
-const ToDo = ({refs,board}) => {
+const ToDo = ({todo}) => {
+  let todolist = todo.filter((data)=>{return data.state==="todo"})
+
   return (
-    <div ref={refs} className='colum todo'>
-      {board.map((task)=>{
-             return <Task data={task} />
+    <div draggable  className='colum todo'>
+              <div className='container'>
+              <h4>todo</h4>
+      {todolist.map((task)=>{
+             return <Task data={task} key={task.taskId} />
       })}
+      </div>
     </div>
   )
 }

@@ -23,7 +23,10 @@ a{
     transition: all 0.3s;
 }
 .user:hover .username ul{
-    height: 100px;
+    height: auto;
+    min-height: 100px;
+    padding: 55px 0px !important;
+    margin: -55px 0px !important;
 }
 .colum{
     width: 300px;

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDrag } from 'react-dnd'
 const Task = ({data}) => {
     const [{isDraggin},drag] = useDrag(()=>({
@@ -8,10 +8,19 @@ const Task = ({data}) => {
             isDraggin:!!monitor.isDragging(),
         })
     }))
+    const [inTheTask,setInTheTask] = useState(false)
   return (
-    <div ref={drag} className='task' style={{display:isDraggin?"none":"block"}}>
+    <div draggable className='container' >
+    <div draggable ref={drag} className='task' style={{display:isDraggin?"none":"block"}} onClick={()=>{inTheTask?setInTheTask(false):setInTheTask(true)}}>
                         <p>{data.taskName}</p>
+                        <button>{data.state==='task'?"t":data.state==='todo'?"c":"cf"}</button>
                 </div>
+                {inTheTask?
+                <div className="inthetask">
+                <p>{data.taskName}</p>
+                   <button onClick={()=>{inTheTask?setInTheTask(false):setInTheTask(true)}}>X</button>
+                </div>:''}
+       </div>
   )
 }
 
